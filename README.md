@@ -1,8 +1,8 @@
-# Python Project Template Cookiecutter
+# Python DataScience Project Template Cookiecutter
 
-This cookiecutter template provides a default template for a standard Python project, just Python, nothing else. Anything else required would need to be installed after creating project from this cookiecutter.
-
-Best practices [cookiecutter](https://github.com/audreyr/cookiecutter) template as described in this [blogpost](https://sourcery.ai/blog/python-best-practices/).
+This cookiecutter template provides a default template for a standard DatasScience Python project, just Python, 
+Pandas, Numpy, Scipy and Matplotlib, nothing else. Anything else required would need to be installed after creating
+project from this cookiecutter.
 
 This uses pre-commit command too, check it [here](https://pre-commit.com/). 
 
@@ -15,7 +15,7 @@ Also, there are a couple of Github workflow actions, one to Publish the Docker i
 - Static typing with [mypy](http://mypy-lang.org/)
 - Linting with [flake8](http://flake8.pycqa.org/en/latest/)
 - Git hooks that run all the above with [pre-commit](https://pre-commit.com/)
-- Deployment ready with [Docker](https://docker.com/)
+- Deployment ready with [Docker](https://docker.com/), Jupyter notebook runs there
 - Continuous Integration with [GitHub Actions](https://github.com/features/actions)
 
 ## Quickstart
@@ -29,7 +29,7 @@ pipx install pipenv
 pipx install pre-commit
 
 # Use cookiecutter to create project from this template
-pipx run cookiecutter gh:internetmosquito/python-project-template-cookiecutter
+pipx run cookiecutter gh:internetmosquito/python-datascience-project-template-cookiecutter
 
 # Enter project directory
 cd <repo_name>

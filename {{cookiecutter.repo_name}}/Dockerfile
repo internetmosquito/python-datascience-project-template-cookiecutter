@@ -30,9 +30,20 @@ RUN useradd --create-home appuser
 WORKDIR /home/appuser
 USER appuser
 
+# Make a folder for notebooks
+RUN mkdir /opt/notebooks
+
+# Install nb extensions
+RUN jupyter nbextension install --py hide_code
+RUN jupyter nbextension enable --py hide_code
+RUN jupyter serverextension enable --py hide_code
+
 # Install application into container
 COPY . .
 
-# Run the executable
-ENTRYPOINT ["python", "-m", "{{cookiecutter.repo_name}}"]
-CMD ["10"]
+# COPY in your custom config
+# COPY jupyter_notebook_config.py /.jupyter/jupyter_notebook_config.py
+EXPOSE 8888
+# RUN the notebook
+CMD ["/opt/conda/bin/jupyter", "notebook", "--notebook-dir=/opt/notebooks", "--ip='*'", "--port=8888", "--no-browser", "--allow-root", "--NotebookApp.token=''"]
+

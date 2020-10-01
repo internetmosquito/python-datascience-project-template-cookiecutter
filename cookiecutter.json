@@ -1,4 +1,4 @@
 {
-  "project_name": "Best Practices",
+  "project_name": "DataScience Project",
   "repo_name": "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}"
 }
